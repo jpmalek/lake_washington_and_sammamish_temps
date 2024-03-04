@@ -30,10 +30,19 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
     TODO: tests
     TODO: failover to backup files on error
     TODO: https://green2.kingcounty.gov/lake-buoy/GenerateMapData.aspx called from https://green2.kingcounty.gov/lake-buoy/default.aspx
+    NOTE: python 3.11.5
     NOTE: https://d3bwuucxp9c0h3.cloudfront.net/WA/lake_wa_highs_and_lows.json
     NOTE: https://swimming.withelvis.com/WA/lake_wa_highs_and_lows.json
     NOTE : real-time data is updated by King County at approx 12AM, 8AM and 4PM
-"""
+    NOTE: setup steps:
+        pip install pipreqs; run pipreqs . in project directory to generate a requirements.txt file. pip freeze > requirements.txt outputs all installed packages.
+        docker: 
+            run source ./export_aws_credentials_to_env.sh to export AWS credentials to environment variables locally.
+            docker init (creates .dockerignore,compose.yaml,Dockerfile,README.Docker.md)
+            update compose.yaml with environment variables
+            docker compose up --build
+            TODO: install chromedriver in docker
+"""         
 class FileManager:
     """
     A class for managing file operations on either a local file system or AWS S3, including
@@ -820,7 +829,7 @@ class KingCountyLakes():
         else:
             self.file_manager.logger.info(f'+++++++++ Not time to process real-time lake data.')
         
-        self.chrome_helper.cleanup()
+        
     def __del__(self):
         self.chrome_helper.cleanup()
 
