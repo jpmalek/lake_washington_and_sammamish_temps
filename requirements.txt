@@ -1,0 +1,11 @@
+#Requests==2.31.0
+Requests
+#selenium==4.18.1
+selenium
+chromedriver_py
+#boto3==1.34.48
+boto3
+#botocore==1.34.48
+botocore
+#pandas==2.1.4
+pandas
