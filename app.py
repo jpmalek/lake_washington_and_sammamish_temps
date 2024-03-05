@@ -342,7 +342,7 @@ class ChromeUtility:
         Get historical lake temperature data from the Washington State Department of Ecology.
         """
         end_date = datetime.now(self.pacific_tz).strftime('%m/%d/%Y')
-        
+
         # Page reloads upon select. Re-locate the dropdown before interacting with it to avoid StaleElementReferenceException
         dropdown_element = self.driver.find_element(By.ID, "ctl00_kcMasterPagePlaceHolder_LocatorDropDownList")
         dropdown = Select(dropdown_element)
@@ -811,6 +811,7 @@ class KingCountyLakes():
             # calculate whether it's time to request new data
             last_updated = json_response.get('last_updated',None)
             formatted_last_updated = datetime.strptime(last_updated, "%Y-%m-%d %H:%M:%S")
+            formatted_last_updated = self.pacific_tz.localize(formatted_last_updated)
             time_diff = datetime.now(self.pacific_tz) - formatted_last_updated
             hours_diff = time_diff.total_seconds() / 3600
             if hours_diff > hours_to_cache:
