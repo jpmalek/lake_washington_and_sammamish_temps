@@ -21,6 +21,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
+import pytz
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -304,7 +305,7 @@ class ChromeUtility:
     def __init__(self,headless=True,download_directory='downloads'):
         self.logger = logging.getLogger()
         self.binary_path = binary_path
-        
+        self.pacific_tz = pytz.timezone('America/Los_Angeles')
         self.historical_locations = '' 
 
         self.options = Options()
@@ -340,6 +341,8 @@ class ChromeUtility:
         """
         Get historical lake temperature data from the Washington State Department of Ecology.
         """
+        end_date = datetime.now(self.pacific_tz).strftime('%m/%d/%Y')
+        
         # Page reloads upon select. Re-locate the dropdown before interacting with it to avoid StaleElementReferenceException
         dropdown_element = self.driver.find_element(By.ID, "ctl00_kcMasterPagePlaceHolder_LocatorDropDownList")
         dropdown = Select(dropdown_element)
@@ -373,7 +376,7 @@ class ChromeUtility:
         # List comprehension to get the text of each option
         data_types = [option.text for option in data_type_dropdown.options[1:]]
         data_type_dropdown.select_by_visible_text(data_types[0])
-        current_year = datetime.now().year.__str__()
+        current_year = datetime.now(self.pacific_tz).year.__str__()
         # Wait for the specific value to be available in the drop-down list
         WebDriverWait(self.driver, 10).until(
             EC.text_to_be_present_in_element_value((By.ID, 'ctl00_kcMasterPagePlaceHolder_c_YearDropDownList'), current_year)
@@ -396,8 +399,8 @@ class ChromeUtility:
         # Now, select the next option
         dropdown.select_by_visible_text(location)
         self.logger.info(f'Option text: {location}')
-        current_year = datetime.now().year.__str__()
-        current_month = datetime.now().month.__str__()
+        current_year = datetime.now(self.pacific_tz).year.__str__()
+        current_month = datetime.now(self.pacific_tz).month.__str__()
         
         # Wait for the specific value to be available in the drop-down list
         WebDriverWait(self.driver, 10).until(
@@ -425,6 +428,8 @@ class ProcessData:
         """
         Initializes the ProcessData instance with empty structures for temperature tracking by lake name.
         """
+        self.pacific_tz = pytz.timezone('America/Los_Angeles')
+
         self.highs_and_lows = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: {'high': None, 'low': None, 'high_meta': {}, 'low_meta': {}})))
         self.monthly_highs_and_lows = defaultdict(lambda: defaultdict(lambda: {'high': None, 'low': None, 'high_meta': {}, 'low_meta': {}}))
         self.all_time_high_low = defaultdict(lambda: {'high': None, 'low': None, 'high_meta': {}, 'low_meta': {}})
@@ -524,7 +529,7 @@ class ProcessData:
         - str: JSON string containing the high and low temperature records.
         """
         data = {}
-        data['last_updated'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        data['last_updated'] = datetime.now(self.pacific_tz).strftime('%Y-%m-%d %H:%M:%S')
         for lake, records in self.highs_and_lows.items():
             lake_data = {
                 'all_time_high': self.all_time_high_low[lake]['high'],
@@ -551,7 +556,7 @@ class ProcessData:
 
 class KingCountyLakes():
     def __init__(self):
-        
+        self.pacific_tz = pytz.timezone('America/Los_Angeles')
         self.file_manager = FileManager(use_s3=False)
         self.s3_file_manager = FileManager(use_s3=True)
         self.chrome_helper = ChromeUtility(headless=True,download_directory=self.file_manager.download_directory)
@@ -712,7 +717,7 @@ class KingCountyLakes():
 
     def save_cached_realtime_lake_data(self,files):
         data = {}
-        data['last_updated'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        data['last_updated'] = datetime.now(self.pacific_tz).strftime('%Y-%m-%d %H:%M:%S')
         lake_name = ''
         for f in files:
             lake_name = f.split('/')[-1].split('.')[0]  # Extract file prefix
@@ -769,7 +774,7 @@ class KingCountyLakes():
         segments = re.split('N\^|Y\^', response.text)
         lake_segments = [next((segment for segment in segments if lake_name in segment), None) for lake_name in ['Washington', 'Sammamish']]
         data = {}
-        data['last_updated'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        data['last_updated'] = datetime.now(self.pacific_tz).strftime('%Y-%m-%d %H:%M:%S')
         for segment in lake_segments:
             # Split the segment into fields
             fields = segment.split('|')
@@ -806,7 +811,7 @@ class KingCountyLakes():
             # calculate whether it's time to request new data
             last_updated = json_response.get('last_updated',None)
             formatted_last_updated = datetime.strptime(last_updated, "%Y-%m-%d %H:%M:%S")
-            time_diff = datetime.now() - formatted_last_updated
+            time_diff = datetime.now(self.pacific_tz) - formatted_last_updated
             hours_diff = time_diff.total_seconds() / 3600
             if hours_diff > hours_to_cache:
                 self.prod_url_dict[key]["update"] = True
