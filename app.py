@@ -26,6 +26,22 @@ import pytz
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 """
+    TODO: lock security
+        DONE: create a new admin user
+        Create a new user with only the necessary permissions
+        test their credentials work with the script
+        DONE: delete the root keys
+        put their credentials in secrets manager
+        update ecs policy to grant access to secrets manager
+        test script in ecs
+        create and test docker file on ec2 instance
+        create repository : aws ecr create-repository --repository-name lake-washington-and-sammamish-temps --region us-west-2
+        auth with default registry: aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin 139626508613.dkr.ecr.us-west-2.amazonaws.com
+        tag image: sudo docker tag lake-washington-and-sammamish-temps:latest 139626508613.dkr.ecr.us-west-2.amazonaws.com/lake-washington-and-sammamish-temps:latest
+        push image to default registry: sudo docker push 139626508613.dkr.ecr.us-west-2.amazonaws.com/lake-washington-and-sammamish-temps:latest
+        ~1.5G 
+        https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-fargate.html
+        note: create all_cloudwatch_policy and attach to role https://us-east-1.console.aws.amazon.com/iam/home#/policies/details/arn%3Aaws%3Aiam%3A%3A139626508613%3Apolicy%2Fall_cloud_watch?section=entities_attached
     TODO: readme
     TODO: monitoring and alerting
     TODO: tests
@@ -569,12 +585,12 @@ class KingCountyLakes():
         self.prod_url_dict = {
             'highs and lows': { 
                 'url': self.highs_and_lows_prod_url,
-                'hours_to_cache': 1440, # 60 days
+                'hours_to_cache': 0, # 60 days = 1440
                 'update': False
             },
             'lake temps': { 
                 'url': self.lake_temps_prod_url,
-                'hours_to_cache': 8,
+                'hours_to_cache': 0,
                 'update': False
             },
         }
