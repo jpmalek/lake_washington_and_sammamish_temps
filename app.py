@@ -585,12 +585,12 @@ class KingCountyLakes():
         self.prod_url_dict = {
             'highs and lows': { 
                 'url': self.highs_and_lows_prod_url,
-                'hours_to_cache': 0, # 60 days = 1440
+                'hours_to_cache': 1440, # 60 days = 1440
                 'update': False
             },
             'lake temps': { 
                 'url': self.lake_temps_prod_url,
-                'hours_to_cache': 0,
+                'hours_to_cache': 8,
                 'update': False
             },
         }
