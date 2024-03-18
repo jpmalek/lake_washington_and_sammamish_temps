@@ -42,7 +42,7 @@ def test_file_manager_backup_file(mocker_file_manager):
     # Call the method
     mocker_file_manager.backup_file('test_file')
     # Assert that the method was called with the correct arguments
-    mocker_file_manager.backup_file.assert_called_with('test_file')
+    mocker_file_manager.backup_file.assert_called_with('test_filex')
 
 def test_chrome_utility_get_historical_wa_lake_data_locations(mocker_chrome_utility):
     # Call the method
