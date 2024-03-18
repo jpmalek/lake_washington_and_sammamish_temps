@@ -25,13 +25,8 @@ jobs:
                 pytest test_app.py --cov=app --cov-report html
         - name: List htmlcov directory
           run: ls /home/runner/work/lake_washington_and_sammamish_temps/lake_washington_and_sammamish_temps/htmlcov
-        - name: Deploy to GitHub Pages
-          uses: JamesIves/github-pages-deploy-action@v4.5.0
+        - name: GitHub Pages action
+          uses: peaceiris/actions-gh-pages@v3.9.3
           with:
-                branch: gh-pages
-                folder: htmlcov
-                token: ${{ secrets.GH_PAGES_TOKEN }}
-                clean: true
-                single-commit: true
-                silent: false
-                force: false
+           publish_dir: /home/runner/work/lake_washington_and_sammamish_temps/lake_washington_and_sammamish_temps/htmlcov        
+    
