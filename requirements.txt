@@ -10,3 +10,5 @@ botocore
 #pandas==2.1.4
 pandas
 pytz
+pytest-mock
+pytest-cov
