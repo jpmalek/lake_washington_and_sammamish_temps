@@ -24,7 +24,7 @@ jobs:
           run: |
                 pytest test_app.py --cov=app --cov-report html
         - name: List htmlcov directory
-          run: ls htmlcov
+          run: ls /home/runner/work/lake_washington_and_sammamish_temps/lake_washington_and_sammamish_temps/htmlcov
         - name: Deploy to GitHub Pages
           uses: JamesIves/github-pages-deploy-action@v4.5.0
           with:
