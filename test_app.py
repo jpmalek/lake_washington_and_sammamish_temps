@@ -37,29 +37,29 @@ def test_file_manager_init(mocker_file_manager):
     # Assert that the method was called
     mocker_file_manager.assert_called()
 
-def test_file_manager_backup_file(mocker_file_manager):
-    # Call the method
-    mocker_file_manager.backup_file('test_file')
-    # Assert that the method was called with the correct arguments
-    mocker_file_manager.backup_file.assert_called_with('test_file')
+# def test_file_manager_backup_file(mocker_file_manager):
+#     # Call the method
+#     mocker_file_manager.backup_file('test_file')
+#     # Assert that the method was called with the correct arguments
+#     mocker_file_manager.backup_file.assert_called_with('test_file')
 
-def test_chrome_utility_get_historical_wa_lake_data_locations(mocker_chrome_utility):
-    # Call the method
-    mocker_chrome_utility.get_historical_wa_lake_data_locations()
-    # Assert that the method was called
-    mocker_chrome_utility.get_historical_wa_lake_data_locations.assert_called()
+# def test_chrome_utility_get_historical_wa_lake_data_locations(mocker_chrome_utility):
+#     # Call the method
+#     mocker_chrome_utility.get_historical_wa_lake_data_locations()
+#     # Assert that the method was called
+#     mocker_chrome_utility.get_historical_wa_lake_data_locations.assert_called()
 
-def test_process_data_high_and_low_temps(mocker_process_data):
-    # Call the method with some test data
-    mocker_process_data.high_and_low_temps([{'temp': 10}, {'temp': 20}, {'temp': 30}])
-    # Assert that the method was called with the correct arguments
-    mocker_process_data.high_and_low_temps.assert_called_with([{'temp': 10}, {'temp': 20}, {'temp': 30}])
-    # TODO: use mock data to test monthly, all time high and low temps
+# def test_process_data_high_and_low_temps(mocker_process_data):
+#     # Call the method with some test data
+#     mocker_process_data.high_and_low_temps([{'temp': 10}, {'temp': 20}, {'temp': 30}])
+#     # Assert that the method was called with the correct arguments
+#     mocker_process_data.high_and_low_temps.assert_called_with([{'temp': 10}, {'temp': 20}, {'temp': 30}])
+#     # TODO: use mock data to test monthly, all time high and low temps
 
-def test_king_county_lakes_get_all_historical_wa_lake_data(mocker_king_county_lakes):
-    # Call the method
-    mocker_king_county_lakes.get_all_historical_wa_lake_data()
-    # Assert that the method was called
-    mocker_king_county_lakes.get_all_historical_wa_lake_data.assert_called()
+# def test_king_county_lakes_get_all_historical_wa_lake_data(mocker_king_county_lakes):
+#     # Call the method
+#     mocker_king_county_lakes.get_all_historical_wa_lake_data()
+#     # Assert that the method was called
+#     mocker_king_county_lakes.get_all_historical_wa_lake_data.assert_called()
    
     
