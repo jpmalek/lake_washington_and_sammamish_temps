@@ -24,7 +24,7 @@ jobs:
           run: |
                 pytest test_app.py --cov=app --cov-report html
         - name: Deploy to GitHub Pages
-          uses: JamesIves/github-pages-deploy-action@4.1.5
+          uses: JamesIves/github-pages-deploy-action@4.5
           with:
                 branch: gh-pages
                 folder: htmlcov
