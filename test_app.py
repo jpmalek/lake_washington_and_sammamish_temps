@@ -1,5 +1,4 @@
 import pytest
-#from app import FileManager, ChromeUtility, ProcessData, KingCountyLakes
 """
  NOTE: to run unit tests and generate a coverage report in the htmlcov directory:  
            pytest test_app.py --cov=app --cov-report html
