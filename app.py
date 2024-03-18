@@ -44,7 +44,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
         note: create all_cloudwatch_policy and attach to role https://us-east-1.console.aws.amazon.com/iam/home#/policies/details/arn%3Aaws%3Aiam%3A%3A139626508613%3Apolicy%2Fall_cloud_watch?section=entities_attached
     TODO: readme
     TODO: monitoring and alerting
-    IN PROGRESS: tests
+    DONE: tests
     TODO: failover to backup files on error
     TODO: https://green2.kingcounty.gov/lake-buoy/GenerateMapData.aspx called from https://green2.kingcounty.gov/lake-buoy/default.aspx
     NOTE: python 3.11.5

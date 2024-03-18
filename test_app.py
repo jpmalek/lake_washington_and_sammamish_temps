@@ -2,7 +2,7 @@ import pytest
 #from app import FileManager, ChromeUtility, ProcessData, KingCountyLakes
 """
  NOTE: to run unit tests and generate a coverage report in the htmlcov directory:  
-           pytest app.py --cov=app --cov-report html
+           pytest test_app.py --cov=app --cov-report html
 """
 @pytest.fixture
 def mocker_file_manager(mocker):
