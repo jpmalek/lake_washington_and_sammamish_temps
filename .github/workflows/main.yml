@@ -28,3 +28,4 @@ jobs:
           with:
                 branch: gh-pages
                 folder: htmlcov
+                token: ${{ secrets.GH_PAGES_TOKEN }}
