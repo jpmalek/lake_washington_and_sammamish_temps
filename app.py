@@ -44,7 +44,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
         note: create all_cloudwatch_policy and attach to role https://us-east-1.console.aws.amazon.com/iam/home#/policies/details/arn%3Aaws%3Aiam%3A%3A139626508613%3Apolicy%2Fall_cloud_watch?section=entities_attached
     TODO: readme
     TODO: monitoring and alerting
-    TODO: tests
+    IN PROGRESS: tests
     TODO: failover to backup files on error
     TODO: https://green2.kingcounty.gov/lake-buoy/GenerateMapData.aspx called from https://green2.kingcounty.gov/lake-buoy/default.aspx
     NOTE: python 3.11.5
@@ -787,7 +787,7 @@ class KingCountyLakes():
             return
         self.file_manager.logger.info(f'Got realtime lake data from {url}')
         # Split the response into segments
-        segments = re.split('N\^|Y\^', response.text)
+        segments = re.split('N^|Y^', response.text)
         lake_segments = [next((segment for segment in segments if lake_name in segment), None) for lake_name in ['Washington', 'Sammamish']]
         data = {}
         data['last_updated'] = datetime.now(self.pacific_tz).strftime('%Y-%m-%d %H:%M:%S')
@@ -855,13 +855,18 @@ class KingCountyLakes():
     def __del__(self):
         self.chrome_helper.cleanup()
 
-king_county_lakes = KingCountyLakes()
-king_county_lakes.go()
-# uncomment the next line to gather Lake WA and Sammamish temps and push to S3.
-#king_county_lakes.get_realtime_lake_data()
+def main():
+    king_county_lakes = KingCountyLakes()
+    king_county_lakes.go()
 
-# uncomment the next line and run to process all lake historical data and upload the high-low temps to S3.
-#king_county_lakes.process_all_historical()
+if __name__ == "__main__":
+    main()
+
+# to gather Lake WA and Sammamish temps and push to S3.
+# king_county_lakes.get_realtime_lake_data()
+
+# to process all lake historical data and upload the high-low temps to S3.
+# king_county_lakes.process_all_historical()
 
 
     
