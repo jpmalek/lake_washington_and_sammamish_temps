@@ -32,3 +32,6 @@ jobs:
                 folder: htmlcov
                 token: ${{ secrets.GH_PAGES_TOKEN }}
                 clean: true
+                single-commit: true
+                silent: false
+                force: false
