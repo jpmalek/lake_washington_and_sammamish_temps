@@ -23,8 +23,10 @@ jobs:
         - name: Run tests
           run: |
                 pytest test_app.py --cov=app --cov-report html
+        - name: List htmlcov directory
+          run: ls htmlcov
         - name: Deploy to GitHub Pages
-          uses: JamesIves/github-pages-deploy-action@4.5
+          uses: JamesIves/github-pages-deploy-action@4.5.0
           with:
                 branch: gh-pages
                 folder: htmlcov
