@@ -1,0 +1,20 @@
+# Run as needed:
+# sudo docker compose build --no-cache
+# sudo docker compose up --build
+# sudo docker exec -it lake_wa_container2 bash
+
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+       - AWS_ACCESS_KEY_ID
+       - AWS_SECRET_ACCESS_KEY
+    container_name: lake_wa_container8
+    command: sleep infinity
+
+
