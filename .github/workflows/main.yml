@@ -42,6 +42,9 @@ jobs:
         - name: debug
           run: |
             cd /home/runner/actions_github_pages_*/
+            pwd
+            whoami
+            ls -lsa
             git status
             git add --all -v
             git status
