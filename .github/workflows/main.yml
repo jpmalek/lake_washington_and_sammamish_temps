@@ -37,5 +37,6 @@ jobs:
            allow_empty_commit: true
         - name: debug
           run: |
-            cat /home/runner/actions_github_pages_*/.gitignore
+            cd /home/runner/actions_github_pages_*/
+            git status
     
