@@ -6,8 +6,9 @@ on:
             - main
     workflow_dispatch:
 
-permissions: write-all   
-    
+permissions:   
+    contents: write
+
 jobs:
     build:
 
@@ -36,5 +37,5 @@ jobs:
            allow_empty_commit: true
         - name: debug
           run: |
-            ls -lsa /home/runner/actions_github_pages_*
+            cat /home/runner/actions_github_pages_*/.gitignore
     
