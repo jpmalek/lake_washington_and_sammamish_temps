@@ -29,13 +29,13 @@ jobs:
                 pytest test_app.py --cov=app --cov-report html
         - name: pre-debug
           run: |
-            ls -lsa /home/runner/work/lake_washington_and_sammamish_temps/lake_washington_and_sammamish_temps/htmlcov
-            
+            ls -lsa htmlcov
+            rm htmlcov/.gitignore
 
         - name: GitHub Pages action
           uses: peaceiris/actions-gh-pages@v3.9.3
           with:
-           publish_dir: /home/runner/work/lake_washington_and_sammamish_temps/lake_washington_and_sammamish_temps/htmlcov
+           publish_dir: htmlcov
            github_token: ${{ secrets.GITHUB_TOKEN }}
            allow_empty_commit: true
            force_orphan: true
@@ -46,7 +46,4 @@ jobs:
             whoami
             ls -lsa
             git status
-            git add -f --all -v
-            git status
-            cat .gitignore
     
