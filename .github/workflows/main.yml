@@ -33,5 +33,10 @@ jobs:
           with:
            publish_dir: /home/runner/work/lake_washington_and_sammamish_temps/lake_washington_and_sammamish_temps/htmlcov
            github_token: ${{ secrets.GITHUB_TOKEN }}
-           allow_empty_commit: true       
+           allow_empty_commit: true
+        - name: debug
+          run: |
+            pwd
+            ls -lsa
+            git status
     
