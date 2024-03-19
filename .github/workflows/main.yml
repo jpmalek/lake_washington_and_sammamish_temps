@@ -39,4 +39,8 @@ jobs:
            github_token: ${{ secrets.GITHUB_TOKEN }}
            allow_empty_commit: true
            force_orphan: true
+        - name: post-debug
+          run: |
+            cd /home/runner/actions_github_pages_*/
+            ls -lsa
     
