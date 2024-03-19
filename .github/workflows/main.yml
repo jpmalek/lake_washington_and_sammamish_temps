@@ -36,7 +36,5 @@ jobs:
            allow_empty_commit: true
         - name: debug
           run: |
-            pwd
-            ls -lsa
-            git status
+            ls -lsa /home/runner/actions_github_pages_*
     
