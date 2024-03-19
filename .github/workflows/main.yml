@@ -46,6 +46,7 @@ jobs:
             whoami
             ls -lsa
             git status
-            git add --all -v
+            git add -f --all -v
             git status
+            cat .gitignore
     
