@@ -1,9 +1,10 @@
 # Overview
-    This open-source project produces a service that gathers historical record-high/record-low and real-time lake water temperatures for Lake Washington and Lake Sammamish from King County Washington data sources.
+This open-source project produces a service that gathers historical record-high/record-low and real-time lake water temperatures for Lake Washington and Lake Sammamish from King County Washington data sources.
 
-    Current Lake Washington and Lake Sammamish water temperatures are published in JSON format here: https://swimming.withelvis.com/WA/lake_temps.json
+Current Lake Washington and Lake Sammamish water temperatures are published in JSON format [here](https://swimming.withelvis.com/WA/lake_temps.json).
 
-    Record all-time, and by-month high and low Lake Washington and Lake Sammamish water temperatures are published in JSON format here: https://swimming.withelvis.com/WA/lake_wa_highs_and_lows.json
+Record all-time, and by-month high and low Lake Washington and Lake Sammamish water temperatures are published in JSON format [here](https://swimming.withelvis.com/WA/lake_wa_highs_and_lows.json).
+
 <!-- 
 # Intro 
     why lk wa temps
