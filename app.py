@@ -1,4 +1,3 @@
-# FILEPATH: /Users/jeffmalek/Documents/git/lake-washington-and-sammamish/Lake Washington Temps.ipynb
 from collections import defaultdict
 import csv
 import json
@@ -26,39 +25,7 @@ import pytz
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 """
-    TODO: lock security
-        DONE: create a new admin user
-        Create a new user with only the necessary permissions
-        test their credentials work with the script
-        DONE: delete the root keys
-        put their credentials in secrets manager
-        update ecs policy to grant access to secrets manager
-        test script in ecs
-        create and test docker file on ec2 instance
-        create repository : aws ecr create-repository --repository-name lake-washington-and-sammamish-temps --region us-west-2
-        auth with default registry: aws ecr get-login-password --region us-west-2 | sudo docker login --username AWS --password-stdin 139626508613.dkr.ecr.us-west-2.amazonaws.com
-        tag image: sudo docker tag lake-washington-and-sammamish-temps:latest 139626508613.dkr.ecr.us-west-2.amazonaws.com/lake-washington-and-sammamish-temps:latest
-        push image to default registry: sudo docker push 139626508613.dkr.ecr.us-west-2.amazonaws.com/lake-washington-and-sammamish-temps:latest
-        ~1.5G 
-        https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-fargate.html
-        note: create all_cloudwatch_policy and attach to role https://us-east-1.console.aws.amazon.com/iam/home#/policies/details/arn%3Aaws%3Aiam%3A%3A139626508613%3Apolicy%2Fall_cloud_watch?section=entities_attached
-    TODO: readme
-    TODO: monitoring and alerting
-    DONE: tests
-    TODO: failover to backup files on error
-    TODO: https://green2.kingcounty.gov/lake-buoy/GenerateMapData.aspx called from https://green2.kingcounty.gov/lake-buoy/default.aspx
-    NOTE: python 3.11.5
-    NOTE: https://d3bwuucxp9c0h3.cloudfront.net/WA/lake_wa_highs_and_lows.json
-    NOTE: https://swimming.withelvis.com/WA/lake_wa_highs_and_lows.json
-    NOTE : real-time data is updated by King County at approx 12AM, 8AM and 4PM
-    NOTE: setup steps:
-        pip install pipreqs; run pipreqs . in project directory to generate a requirements.txt file. pip freeze > requirements.txt outputs all installed packages.
-        docker: 
-            run source ./export_aws_credentials_to_env.sh to export AWS credentials to environment variables locally.
-            docker init (creates .dockerignore,compose.yaml,Dockerfile,README.Docker.md)
-            update compose.yaml with environment variables
-            docker compose up --build
-            TODO: install chromedriver in docker
+    See README for more information on this app.
 """         
 class FileManager:
     """
