@@ -10,11 +10,12 @@ When spring hits in Washington state, we start thinking about jumping in the lak
 
 My first step was to do some research on what has already been done on this front. 
 
-My findings were very interesting; I half-expected there to be an API(s) that surfaced lake water temperature data worldwide, or at least nationwide. After looking around quite a bit, and getting some help via email from folks at the USGS, it turns out that there apparently isn't a good source of this kind of data, outside of the county level. Interesting, given current climate concerns with regard to surface water temperatures! 
+My findings were very interesting; I half-expected there to be an API(s) that surfaced lake water temperature data worldwide, or at least nationwide. After looking around quite a bit, and getting some help via email (thank you!) from Ronald Henderson and others at the USGS, it turns out that there apparently isn't a good source of this kind of data, outside of the county level. Interesting, given current climate concerns with regard to surface water temperatures! 
 
-This left me focused on the information provided on the King County website <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/science-services" target="_blank">here</a>. I found it a bit cumbersome to find what I was looking for (which was a good thing, in terms of substantiating my project), so I reached out and got some help from their staff. They first pointed me to data sources <a href="https://data.kingcounty.gov/Environment-Waste-Management/Water-Quality/vwmt-pvjw/about_data" target="_blank">here</a>, but I was looking for more of a real-time data feed, so I followed up with more questions. 
+This left me focused on the information provided on the King County website <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/science-services" target="_blank">here</a>. I found it a bit cumbersome to find what I was looking for (which was a good thing, in terms of substantiating my project), so I reached out and got some help from 
+Curtis DeGasperi, Water Quality Engineer at King County Department of Natural Resources and Parks. They first pointed me to data sources <a href="https://data.kingcounty.gov/Environment-Waste-Management/Water-Quality/vwmt-pvjw/about_data" target="_blank">here</a>, but I was looking for more of a real-time data feed, so I followed up with more questions. 
 
-Per their response, I learned that the data sources for the pages <a href="https://green2.kingcounty.gov/lakes/" target="_blank">here</a> are updated only twice monthly (Mar-Nov) and monthly (Dec-Feb), and it takes ~45 days after each sampling event for the data generated via field and lab analysis to post to the web. 
+Per Curtis' response, I learned that the data sources for the pages <a href="https://green2.kingcounty.gov/lakes/" target="_blank">here</a> are updated only twice monthly (Mar-Nov) and monthly (Dec-Feb), and it takes ~45 days after each sampling event for the data generated via field and lab analysis to post to the web. 
 
 However, I was pointed to the Lake buoy data pages <a href="https://green2.kingcounty.gov/lake-buoy/default.aspx" target="_blank">here</a>, learning that real-time lake temperatures could be found by scrolling-over the buoy locations. Cool! 
 
@@ -31,14 +32,6 @@ Ultimately I hope this fun little project serves to help others in some way. Che
 <!-- 
 TODO:
 
-sub: Lake water temperature API or data source?
-Ronald Henderson
-IT Specialist
-Kansas Water Science Center
-1217 Biltmore Dr.
-Lawrence, KS 66049
-785-832-3532 (work)
-rhenderson@usgs.gov
 
 sub: [WMA ETO Jira] (WDS-639) lake water temperatures API
 Stephen Huddleston - Enterprise Application Support
