@@ -30,17 +30,17 @@ Over many years in the startup world, I'd never published my own personal open-s
 Ultimately I hope this fun little project serves to help others in some way. Cheers! 
 
 # Technologies and Tools 
-## Operating Systems: OSX, Linux Ubuntu
-## Integrated Development Environment (IDE): VS Code
-## Package Management: Anaconda, Apt, Pip 
-## Revision Control and Related Tools: Git, GitHub, Github Actions, Github Pages, Issues
-## Coding Language: Python 
-## Noteable Python Libraries: Selenium, Pandas, Boto
-## Unit tests and Test Coverage: PyTest
-## Markup Languages: Markdown, JSON, YAML
-## Cloud Services via Amazon Web Services (AWS): IAM, EC2, S3, CloudFront, ECS, ECR, Fargate, Route 53, CloudWatch, EventBridge, Certificate Manager, Secrets Manager
-## Containerization: Docker
-## Domain Registrar: Namecheap
+- **Operating Systems**: OSX, Linux Ubuntu
+- **Integrated Development Environment (IDE)**: VS Code
+- **Package Management**: Anaconda, Apt, Pip 
+- **Revision Control and Related Tools**: Git, GitHub, Github Actions, Github Pages, Issues
+- **Coding Language**: Python 
+- **Noteable Python Libraries**: Selenium, Pandas, Boto
+- **Unit tests and Test Coverage**: PyTest
+- **Markup Languages**: Markdown, JSON, YAML
+- **Cloud Services via Amazon Web Services (AWS)**: IAM, EC2, S3, CloudFront, ECS, ECR, Fargate, Route 53, CloudWatch, EventBridge, Certificate Manager, Secrets Manager
+- **Containerization**: Docker
+- **Domain Registrar**: Namecheap
 
 <!-- 
 TODO:
