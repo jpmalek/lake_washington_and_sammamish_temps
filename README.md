@@ -146,7 +146,7 @@ You'll get:
 
  All for the wonderful low price of: free.
 
-## Noteable Python Libraries**
+## Noteable Python Libraries
 Selenium is a powerful tool for controlling a web browser, optionally in headless mode which is how it's used in this project. It's most commonly used for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can also be automated as well. Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser. It is also the core technology in countless other browser automation tools, APIs and frameworks.
 
 Pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
