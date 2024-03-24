@@ -1,0 +1,23 @@
+#!/bin/sh
+# The .git/hooks directory is not tracked by Git because it's inside the .git directory, 
+# which is used by Git to store repository metadata. However, you can create a hooks directory in the 
+# root of your repository, add your pre-commit file there, and then create a symbolic link to this file in 
+# the .git/hooks directory.
+# Here's how:
+# Create a hooks directory in the root of your repository and move your pre-commit file there:
+#   mkdir hooks
+#   mv .git/hooks/pre-commit hooks/pre-commit
+# Add the pre-commit file to Git and commit it:
+#   git add hooks/pre-commit
+#   git commit -m "Add pre-commit hook"
+# Create a symbolic link in .git/hooks to your pre-commit file:
+#   ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
+# Now, the pre-commit file is tracked by Git, and any changes made to it will take effect immediately 
+# because the file in .git/hooks is just a link to the real file. 
+# Remember to run the ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit command whenever  
+# the repository is clined to a new machine, as the symbolic link is not stored in the Git repository.
+pytest test_app.py --cov=app --cov-report html
+if [ $? -ne 0 ]; then
+   echo "Unit tests failed. Commit aborted."
+   exit 1
+fi
