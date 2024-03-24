@@ -14,7 +14,7 @@
 #   ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
 # Now, the pre-commit file is tracked by Git, and any changes made to it will take effect immediately 
 # because the file in .git/hooks is just a link to the real file. 
-# Remember to run the ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit command whenever  
+# Remember to run the ln -s -f hooks/pre-commit .git/hooks/pre-commit command from the repo root whenever  
 # the repository is clined to a new machine, as the symbolic link is not stored in the Git repository.
 pytest test_app.py --cov=app --cov-report html
 if [ $? -ne 0 ]; then

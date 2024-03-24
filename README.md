@@ -58,7 +58,7 @@ This ability to chain reliable, well-documented, modular commands together allow
 
 After using Windows for many years and then switching many more years ago, I also have a deep appreciation for the macOS operating system. Being Unix-based, it combines the power and flexibility of Unix with the sleek and intuitive user interface that Apple is known for. This means I can leverage powerful command-line tools and scripts, similar to a Linux environment, while also enjoying a smooth, user-friendly desktop experience. The seamless integration between software and hardware in a Mac system also contributes to a stable and efficient operating environment. In terms of security, macOS has a strong track record. It's built on a Unix-based foundation which is known for its robust security features. Furthermore, Apple has implemented several security measures such as Gatekeeper, which blocks untrusted applications, and XProtect, an automatic malware detection tool. Additionally, the fact that macOS is less targeted by malware compared to other operating systems adds an extra layer of security.
 
-I'm a big proponent of doing development work in the environment that matches where the code will end up running. So, if I'm working on server code, I'll typically be working on my Mac, but remoting into a cloud server or container that's running Ubuntu. No point in wrestling with package install challenges on my Mac when the target environment is Ubuntu!  
+I'm a big proponent of doing development work in the environment that matches where the code will end up running. So, if I'm working on server code, I'll typically be working on my Mac, but remoting into a cloud server or container that's running Ubuntu. No point in wrestling with package install challenges on my Mac when the target environment is Ubuntu! This project was a bit of an exception; since it uses Selenium and Chrome, I found it easier to code and debug the web browser interactions on my local machine.  
 
 *nix OS provided for the wonderful low price of: free!
 
@@ -84,6 +84,8 @@ Apt, or Advanced Package Tool, is the default package manager for Ubuntu and oth
 
 Pip, which stands for "Pip Installs Packages", is the standard package manager for Python. It allows you to install and manage additional libraries and dependencies that are not distributed as part of the standard Python library. Pip provides a simple way to install packages from the Python Package Index (PyPI) and other package directories. It also supports virtual environments, which is a key feature for Python developers as it allows them to create isolated Python environments for different projects, ensuring dependencies are kept separate and organized.
 
+All for the wonderful low price of: free.
+
 ## Revision Control and Related Tools
 For revision control, I was a long-time svn user, but years ago switched myself and my teams to Git.
 
@@ -98,6 +100,8 @@ GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScri
 This project uses Github Actions to push code unit test coverage results to Github Pages whenever code is pushed to the main branch. 
 
 GitHub Issues is a robust tracking system that allows you to track bugs, enhancements, or other requests related to your project. It's more than just a bug tracker - it's also a great way to manage your development tasks and workflows. You can assign issues to specific team members, label them for easy searching, and reference them directly in your code commits. This makes GitHub Issues a central part of your project management toolkit. It's great, but frankly it doesn't yet quite compare to other project management tools like Asana or the toolset provided by Atlassian (Jira, etc), albiet at much higher costs.
+
+All for the wonderful low price of: under $10 per month for a Github account. 
 
 ## Coding Languages
 I've coded in many languages over the years, starting with C, HTML and Javascript. 
@@ -140,6 +144,70 @@ You'll get:
 
  As for BASH, I've already talked about why I love it so much: solid, simple commands that can be chained together reliably to produce powerful outcomes. 
 
+ All for the wonderful low price of: free.
+
+## Noteable Python Libraries**
+Selenium is a powerful tool for controlling a web browser, optionally in headless mode which is how it's used in this project. It's most commonly used for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can also be automated as well. Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser. It is also the core technology in countless other browser automation tools, APIs and frameworks.
+
+Pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
+
+Boto is the Amazon Web Services (AWS) SDK for Python. It allows Python developers to write software that makes use of services like Amazon S3, Amazon EC2, and others. With Boto, you can create, configure, and manage AWS services using Python code. This can be very useful for automating tasks, such as setting up infrastructure or deploying applications. Boto supports a wide range of AWS services, making it a key tool for anyone working with AWS.
+
+All for the wonderful low price of: free.
+
+## Unit tests and Test Coverage
+Unit testing is a crucial aspect of software development that involves testing individual units of code (usually functions or methods) to ensure they work as expected. It helps developers catch bugs early in the development cycle, making them easier to fix prior to being deployed to production. 
+
+PyTest is a popular Python testing framework that simplifies the process of writing and running tests. With its easy-to-write syntax, you can write tests quickly and without the boilerplate code that some other testing frameworks require. PyTest also supports a wide range of advanced testing scenarios, including parameterized tests and fixtures. It also can output the percentage of code covered by unit tests, in HTML format for quick and easy reference within your browser. In my workflow, I'v integrated PyTest with a Git pre-commit hook. This means that my tests are automatically run every time I commit changes to my Git repository. If any test fails, the commit is aborted, ensuring that I don't accidentally commit broken code. This setup helps maintain the quality and reliability of my codebase.
+
+All for the wonderful low price of: free.
+
+## Markup Languages
+Markdown is a lightweight markup language used to add formatting elements to plaintext text documents. I'm using Markdown for this README.md file, which is a common practice in software projects. Markdown files are easy to write and read, and they can be converted to a variety of other formats (like HTML). This makes them ideal for writing documentation, as they can be read in a text editor or rendered in a web browser.
+
+JSON (JavaScript Object Notation) is a popular data interchange format that's easy to read and write for humans and easy to parse and generate for machines. It's based on JavaScript syntax but is used in many programming languages beyond JavaScript. In my project, I might be using JSON to store configuration data, to communicate between a client and a server, or to store complex data structures for my application.
+
+YAML (YAML Ain't Markup Language) is a human-friendly data serialization standard that's commonly used for configuration files, but can be used in many applications where data is being stored or transmitted. Like JSON, it's easy for humans to read and write. It also supports complex data structures. In my project, I might be using YAML for configuration files, especially if those files need to be edited by humans. YAML's ability to express complex data structures and its more human-friendly syntax can make it a better choice than JSON for these types of files.
+
+All for the wonderful low price of: free.
+
+## Cloud Services via Amazon Web Services (AWS)
+Amazon Web Services (AWS) is a comprehensive, evolving cloud computing platform provided by Amazon. It provides a mix of infrastructure as a service (IaaS), platform as a service (PaaS), and packaged software as a service (SaaS) offerings. AWS services can offer an organization tools such as compute power, database storage, and content delivery services. Over the years, I've tended to use it as my primary go-to for cloud computing services, over Google's Google Cloud Platform (GCP) or Microsoft's Azure. 
+
+IAM (Identity and Access Management) is a web service that helps you securely control access to AWS resources. It controls who can sign in to your AWS infrastructure and who is authorized to use the resources (EC2, S3 buckets, and so on). It can be a real pain in the butt, but it provides essential functionality to keep resources and applications secure.
+
+S3 (Simple Storage Service) is an object storage service that offers industry-leading scalability, data availability, security, and performance. This means customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases.
+
+CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.
+
+EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier by providing a simple interface that allows you to obtain and configure capacity with minimal friction. EC2 instances are created from "blueprints" called AMIs. I started creating my own custom AMIs in 2009, so that all required code, packages and OS-level customizations were ready to go as soon as the instance was up and running. These days that's typically done with containers (e.g. Docker).
+
+ECR (Elastic Container Registry) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
+
+ECS (Elastic Container Service) is a highly scalable, high-performance container orchestration service that supports Docker containers and allows you to easily run and scale containerized applications on AWS. Getting it working requires jumping through some challenging IAM hoops, but once it's working, it's a fast way to run applications and services.
+
+Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). Fargate makes it easy for you to focus on building your applications; I've done very little with it directly, in this project.
+
+Route 53 is a scalable and highly available Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost-effective way to route end users to Internet applications. I've used it since 2009 for all of my DNS configuration needs.
+
+CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. I find it to be kind of clunky.
+
+EventBridge is a serverless event bus that makes it easy to connect applications together using data from your own applications, integrated Software-as-a-Service (SaaS) applications, and AWS services. 
+
+Certificate Manager is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services and your internal connected resources. It's a pretty incredible, far cry from how certificate management had to be done years ago. Once your certificate is created by AWS, all of the renewals are handled for you automatically, making those browser warnings about expired certs a thing of the not-so-distant past. 
+
+Secrets Manager protects access to your applications, services, and IT resources. This service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Authentication credential rotation can be a real pain, and AWS has made it very easy to make sure it's done on a regular schedule. 
+
+All for the wonderful low price of: reasonably inexpensive, for this project. LMGBTY WRT monthly costs.
+
+
+## Containerization
+Docker is an open-source platform that automates the deployment, scaling, and management of applications. It does this by encapsulating applications into containers, which are standardized executable components that combine application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. Docker can significantly simplify the process of managing and deploying applications, which can be especially beneficial in a microservices architecture.
+
+I used Docker to containerize my app. This means that I package the application and its dependencies into a Docker image, which can then be run consistently on any infrastructure. This eliminates the "it works on my machine" problem, because the application will run the same way in a container regardless of the underlying host system. Docker also integrates well with many popular continuous integration/continuous deployment (CI/CD) systems, making it a key part of any deployment pipeline.
+
+## Domain Registrar
+Domain registrars are companies that manage the reservation of internet domain names. They are accredited by the Internet Corporation for Assigned Names and Numbers (ICANN) and are responsible for the assignment of domain names to individuals or organizations. Namecheap is one such domain registrar that I prefer over others like GoDaddy. Namecheap offers a user-friendly interface, transparent pricing, and excellent customer support. Unlike some other registrars, Namecheap doesn't aggressively upsell other services during the checkout process, which makes for a more pleasant user experience. They also provide a free WhoisGuard service that protects your personal information from being publicly associated with your domain name. This is a feature that many other registrars charge extra for. Overall, I find Namecheap to be a reliable and cost-effective choice for domain registration.
 <!-- 
 TODO:
 sub: [WMA ETO Jira] (WDS-639) lake water temperatures API
@@ -147,15 +215,10 @@ Stephen Huddleston - Enterprise Application Support
 USGS ETO Infrastructure and Services Branch
 
 how-to setup and get started
-    IDE - why VS code; Jupyter Notebooks
-    domain hosting
-    cloud environment
-        why aws
-        how-to setup and get started
-            security first
-            IAM and root access
-            create a new AWS admin user with only the necessary permissions, test their credentials work with the script AWS reqs
-            delete any root keys
+    security first
+    IAM and root access
+    create a new AWS admin user with only the necessary permissions, test their credentials work with the script AWS reqs
+    delete any root keys      
     cloud build environment
         why not local, examples, brew and other package managers
         anaconda
@@ -167,6 +230,21 @@ how-to setup and get started
         pip install pipreqs; run pipreqs . in project directory to generate a requirements.txt file. pip freeze > requirements.txt outputs all installed packages.
     unit testing
         coveragepre-commit hook: vim .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit; 
+        # The .git/hooks directory is not tracked by Git because it's inside the .git directory, 
+            # which is used by Git to store repository metadata. However, you can create a hooks directory in the 
+            # root of your repository, add your pre-commit file there, and then create a symbolic link to this file in 
+            # the .git/hooks directory.
+            # Here's how:
+            # Create a hooks directory in the root of your repository and move your pre-commit file there:
+            #   mkdir hooks && mv .git/hooks/pre-commit hooks/pre-commit
+            # Add the pre-commit file to Git and commit it:
+            #   git add hooks/pre-commit && git commit -m "Add pre-commit hook"
+            # Create a symbolic link in .git/hooks to your pre-commit file:
+            #   ln -s -f ../../hooks/pre-commit .git/hooks/pre-commit
+            # Now, the pre-commit file is tracked by Git, and any changes made to it will take effect immediately 
+            # because the file in .git/hooks is just a link to the real file. 
+            # Remember to run the ln -s -f hooks/pre-commit .git/hooks/pre-commit command from the repo root whenever  
+            # the repository is clined to a new machine, as the symbolic link is not stored in the Git repository.
         action to get coverage reports;
         action bug: coverage.py creating .gitignore with *, and "permissions" content:writevs
         NOTE: coverage on github pages here: https://jpmalek.github.io/lake_washington_and_sammamish_temps/ 
