@@ -16,6 +16,16 @@
 # because the file in .git/hooks is just a link to the real file. 
 # Remember to run the ln -s -f hooks/pre-commit .git/hooks/pre-commit command from the repo root whenever  
 # the repository is clined to a new machine, as the symbolic link is not stored in the Git repository.
+# 
+# NOTE: the local installation of Chrome browser may upgrade, inadvertently outpacing the version of chromedriver-py.
+# This can cause the an error similar to the following:
+#     selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 93
+#     Current browser version is 100.0.4896.75 with binary path /usr/bin/google-chrome
+#
+# To mitigate this, upgrade the chromedriver-py package:
+#  python3 -m pip install --upgrade pip
+#  pip install --upgrade chromedriver-py
+#     
 pytest test_app.py --cov=app --cov-report html
 if [ $? -ne 0 ]; then
    echo "Unit tests failed. Commit aborted."
