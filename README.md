@@ -34,7 +34,7 @@ Ultimately I hope this fun little project serves to help others in some way. Che
 - **Integrated Development Environment (IDE)**: VS Code, Jupyter Notebooks
 - **Package Management**: Anaconda, Apt, Pip 
 - **Revision Control and Related Tools**: Git, GitHub, Github Actions, Github Pages, Github Issues
-- **Coding Languages**: Python, bash 
+- **Coding Languages**: Python, BASH 
 - **Noteable Python Libraries**: Selenium, Pandas, Boto
 - **Unit tests and Test Coverage**: PyTest
 - **Markup Languages**: Markdown, JSON, YAML
