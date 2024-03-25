@@ -58,7 +58,7 @@ This ability to chain reliable, well-documented, modular commands together allow
 
 After using Windows for many years and then switching many more years ago, I also have a deep appreciation for the macOS operating system. Being Unix-based, it combines the power and flexibility of Unix with the sleek and intuitive user interface that Apple is known for. This means I can leverage powerful command-line tools and scripts, similar to a Linux environment, while also enjoying a smooth, user-friendly desktop experience. The seamless integration between software and hardware in a Mac system also contributes to a stable and efficient operating environment. In terms of security, macOS has a strong track record. It's built on a Unix-based foundation which is known for its robust security features. Furthermore, Apple has implemented several security measures such as Gatekeeper, which blocks untrusted applications, and XProtect, an automatic malware detection tool. Additionally, the fact that macOS is less targeted by malware compared to other operating systems adds an extra layer of security.
 
-I'm a big proponent of doing development work in the environment that matches where the code will end up running. So, if I'm working on server code, I'll typically be working on my Mac, but remoting into a cloud server or container that's running Ubuntu. No point in wrestling with package install challenges on my Mac when the target environment is Ubuntu! This project was a bit of an exception; since it uses Selenium and Chrome, I found it easier to code and debug the web browser interactions on my local machine.  
+I'm a big proponent of doing development work in the environment that matches where the code will end up running. So, if I'm working on server code, I'll typically be working on my Mac, but remoting into a cloud server or container that's running Ubuntu. No point in wrestling with package install challenges on my Mac when the target environment is Ubuntu! The <a href="https://github.com/jpmalek/lake_washington_and_sammamish_temps" target="_blank">lake_washington_and_sammamish_temps</a> project was a bit of an exception; since it uses Selenium and Chrome, I found it easier to code and debug the web browser interactions on my local machine.  
 
 *nix OS provided for the wonderful low price of: free!
 
@@ -97,7 +97,7 @@ GitHub Actions is a CI/CD (Continuous Integration/Continuous Deployment) tool th
 
 GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website. It's a great way to host project pages, documentation, or a personal blog. One of the key benefits of GitHub Pages is its tight integration with GitHub, which means you can manage your website content with the same Git workflows you use for your code.
 
-This project uses Github Actions to push code unit test coverage results to Github Pages whenever code is pushed to the main branch. 
+The <a href="https://github.com/jpmalek/lake_washington_and_sammamish_temps" target="_blank">lake_washington_and_sammamish_temps</a> project uses Github Actions to push code unit test coverage results to Github Pages whenever code is pushed to the main branch. 
 
 GitHub Issues is a robust tracking system that allows you to track bugs, enhancements, or other requests related to your project. It's more than just a bug tracker - it's also a great way to manage your development tasks and workflows. You can assign issues to specific team members, label them for easy searching, and reference them directly in your code commits. This makes GitHub Issues a central part of your project management toolkit. It's great, but frankly it doesn't yet quite compare to other project management tools like Asana or the toolset provided by Atlassian (Jira, etc), albiet at much higher costs.
 
@@ -147,7 +147,7 @@ You'll get:
  All for the wonderful low price of: free.
 
 ## Noteable Python Libraries
-Selenium is a powerful tool for controlling a web browser, optionally in headless mode which is how it's used in this project. It's most commonly used for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can also be automated as well. Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser. It is also the core technology in countless other browser automation tools, APIs and frameworks.
+Selenium is a powerful tool for controlling a web browser, optionally in headless mode which is how it's used in the <a href="https://github.com/jpmalek/lake_washington_and_sammamish_temps" target="_blank">lake_washington_and_sammamish_temps</a> project. It's most commonly used for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can also be automated as well. Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser. It is also the core technology in countless other browser automation tools, APIs and frameworks.
 
 Pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series. It is free software released under the three-clause BSD license. The name is derived from the term "panel data", an econometrics term for data sets that include observations over multiple time periods for the same individuals.
 
@@ -186,7 +186,7 @@ ECR (Elastic Container Registry) is a fully-managed Docker container registry th
 
 ECS (Elastic Container Service) is a highly scalable, high-performance container orchestration service that supports Docker containers and allows you to easily run and scale containerized applications on AWS. Getting it working requires jumping through some challenging IAM hoops, but once it's working, it's a fast way to run applications and services.
 
-Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). Fargate makes it easy for you to focus on building your applications; I've done very little with it directly, in this project.
+Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). Fargate makes it easy for you to focus on building your applications; I've done very little with it directly, in the <a href="https://github.com/jpmalek/lake_washington_and_sammamish_temps" target="_blank">lake_washington_and_sammamish_temps</a> project.
 
 Route 53 is a scalable and highly available Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost-effective way to route end users to Internet applications. I've used it since 2009 for all of my DNS configuration needs.
 
@@ -198,7 +198,7 @@ Certificate Manager is a service that lets you easily provision, manage, and dep
 
 Secrets Manager protects access to your applications, services, and IT resources. This service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Authentication credential rotation can be a real pain, and AWS has made it very easy to make sure it's done on a regular schedule. 
 
-All for the wonderful low price of: reasonably inexpensive, for this project. LMGBTY WRT monthly costs.
+All for the wonderful low price of: reasonably inexpensive, for the <a href="https://github.com/jpmalek/lake_washington_and_sammamish_temps" target="_blank">lake_washington_and_sammamish_temps</a> project. LMGBTY WRT monthly costs.
 
 
 ## Containerization
