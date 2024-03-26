@@ -754,7 +754,7 @@ class KingCountyLakes():
             return
         self.file_manager.logger.info(f'Got realtime lake data from {url}')
         # Split the response into segments
-        segments = re.split('N^|Y^', response.text)
+        segments = re.split('N\^|Y\^', response.text)
         lake_segments = [next((segment for segment in segments if lake_name in segment), None) for lake_name in ['Washington', 'Sammamish']]
         data = {}
         data['last_updated'] = datetime.now(self.pacific_tz).strftime('%Y-%m-%d %H:%M:%S')
