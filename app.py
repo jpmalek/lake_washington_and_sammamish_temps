@@ -557,7 +557,7 @@ class KingCountyLakes():
             },
             'lake temps': { 
                 'url': self.lake_temps_prod_url,
-                'hours_to_cache': 8,
+                'hours_to_cache': 2,
                 'update': False
             },
         }
