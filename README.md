@@ -48,7 +48,7 @@ Unix/Linux operating systems have long been a favorite of mine due to their flex
 
 One of the most powerful aspects of Linux that I absolutely love is its command-line interface and the suite of tools that come with it. These tools, often referred to as the "Unix philosophy," are designed to do one thing and do it well. They can be combined in countless ways to perform complex tasks. For example, the grep command can be used to search for a specific string in a file or stream of input. The ls command lists the contents of a directory. You can pipe the output of ls into grep to search for a specific file in a directory. The command would look like this: 
     
-    ls | grep myfile.txt. 
+    ls | grep myfile.txt 
 
 This will list all files in the current directory and then search that list for "myfile.txt". To get a bit cheeky, this will create a file named "me", fill "me" with beer, and move me to hawaii:
 
